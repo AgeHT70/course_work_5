@@ -15,13 +15,13 @@ class BaseUnit(ABC):
         """
         При инициализации класса Unit используем свойства класса UnitClass
         """
-        self.name = name
-        self.unit_class = unit_class
-        self.hp = unit_class.max_health
-        self.stamina = unit_class.max_stamina
-        self.weapon = None
-        self.armor = None
-        self._is_skill_used = False
+        self.name: str = name
+        self.unit_class: UnitClass = unit_class
+        self.hp: float = unit_class.max_health
+        self.stamina: float = unit_class.max_stamina
+        self.weapon: Weapon | None = None
+        self.armor: Armor | None = None
+        self._is_skill_used: bool = False
 
     @property
     def health_points(self):

@@ -102,8 +102,7 @@ def choose_enemy() -> str | Any:
         armor = request.form["armor"]
         unit_class = request.form["unit_class"]
 
-        enemy: EnemyUnit = EnemyUnit(name=name, unit_class=unit_classes[
-            unit_class])
+        enemy = EnemyUnit(name=name, unit_class=unit_classes[unit_class])
         enemy.equip_weapon(Equipment().get_weapon(weapon_name=weapon))
         enemy.equip_armor(Equipment().get_armor(armor_name=armor))
         heroes["enemy"] = enemy
